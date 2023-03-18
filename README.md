@@ -9,3 +9,7 @@ doom emacs configuration repo
 * NPM
 ```
 
+``` markdown
+pip install cmake-language-server
+```
+

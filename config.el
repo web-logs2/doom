@@ -76,3 +76,5 @@
 ;; they are implemented.
 (after! dap-mode
   (setq dap-python-debugger 'debugpy))
+(setq +python-ipython-repl-args '("-i" "--simple-prompt" "--no-color-info"))
+(setq +python-jupyter-repl-args '("--simple-prompt"))
