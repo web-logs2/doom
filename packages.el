@@ -50,3 +50,5 @@
 ;(unpin! t)
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
+(package! jsonian :recipe (:host github :repo "iwahbe/jsonian"))
+(package! json-mode :disable t)
