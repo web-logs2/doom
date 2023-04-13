@@ -102,5 +102,11 @@
 ;;       (:prefix-map ("d" . "applications")
 ;;        (:prefix ("j" . "journal")
 ;;         :desc "New journal entry" "j" #'jsonian-find)))
-(after! undo-tree
-  (setq undo-tree-auto-save-history nil))
+(after! js2-mode
+  (set-company-backend! 'js2-mode 'company-tide 'company-yasnippet))
+(after! sh-script
+  (set-company-backend! 'sh-mode
+    '(company-shell :with company-yasnippet)))
+(after! cc-mode
+  (set-company-backend! 'c-mode
+    '(:separate company-irony-c-headers company-irony)))
