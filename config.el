@@ -74,6 +74,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+(setq doom-font (font-spec :family "Hack" :size 13))
 (after! dap-mode
   (setq dap-python-debugger 'debugpy))
 (setq +python-ipython-repl-args '("-i" "--simple-prompt" "--no-color-info"))
@@ -90,3 +91,13 @@
 (after! (jsonian flycheck) (jsonian-enable-flycheck))
 ;; To diasable so-long mode overrides
 (after! (jsonian so-long) (jsonian-no-so-long-mode))
+
+(map! :after jsonian
+      :map jsonian-mode-map
+      :leader
+      (:prefix-map ("j" . "json")
+        (:desc "find path" "j" #'jsonian-find)))
+;; (map! :leader
+;;       (:prefix-map ("d" . "applications")
+;;        (:prefix ("j" . "journal")
+;;         :desc "New journal entry" "j" #'jsonian-find)))
