@@ -16,7 +16,7 @@
 
 (doom! :input
        ;;bidi              ; (tfel ot) thgir etirw uoy gnipleh
-       ;;chinese
+       chinese
        ;;japanese
        ;;layout            ; auie,ctsrnm is the superior home row
 
@@ -46,7 +46,7 @@
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
        ;;tabs              ; a tab bar for Emacs
        (treemacs +lsp +treemacs-git-mode)         ; a project drawer, like neotree but cooler
-       ;;unicode           ; extended unicode support for various languages
+       unicode           ; extended unicode support for various languages
        (vc-gutter +pretty) ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        ;;window-select     ; visually switch windows
@@ -70,8 +70,8 @@
        :emacs
        dired             ; making dired pretty [functional]
        electric          ; smarter, keyword-based electric-indent
-       ;;ibuffer         ; interactive buffer management
-       undo              ; persistent, smarter undo for your inevitable mistakes
+       (ibuffer +icons)         ; interactive buffer management
+       (undo +tree)              ; persistent, smarter undo for your inevitable mistakes
        vc                ; version-control and Emacs, sitting in a tree
 
        :term
@@ -98,7 +98,7 @@
        lookup              ; navigate your code and its documentation
        lsp               ; M-x vscode
        magit             ; a git porcelain for Emacs
-       ;;make              ; run make tasks from Emacs
+       make              ; run make tasks from Emacs
        ;;pass              ; password manager for nerds
        ;;pdf               ; pdf enhancements
        ;;prodigy           ; FIXME managing external services & code builders
@@ -142,7 +142,8 @@
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
        ;;(json +lsp)              ; At least it ain't XML
-       (java +lsp)       ; the poster child for carpal tunnel syndrome
+       ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
+       java
        (javascript +lsp)        ; all(hope(abandon(ye(who(enter(here))))))
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)

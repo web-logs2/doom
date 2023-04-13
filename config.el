@@ -102,3 +102,5 @@
 ;;       (:prefix-map ("d" . "applications")
 ;;        (:prefix ("j" . "journal")
 ;;         :desc "New journal entry" "j" #'jsonian-find)))
+(after! undo-tree
+  (setq undo-tree-auto-save-history nil))
