@@ -96,7 +96,8 @@
       :map jsonian-mode-map
       :leader
       (:prefix-map ("j" . "json")
-        (:desc "find path" "j" #'jsonian-find)))
+        (:desc "find path" "j" #'jsonian-find)
+        (:desc "edit value" "e" #'jsonian-edit-string)))
 ;; (map! :leader
 ;;       (:prefix-map ("d" . "applications")
 ;;        (:prefix ("j" . "journal")
