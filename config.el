@@ -74,7 +74,7 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
-(setq doom-font (font-spec :family "Hack" :size 13))
+(setq doom-font (font-spec :family "Hack" :size 14))
 (after! dap-mode
   (setq dap-python-debugger 'debugpy))
 (setq +python-ipython-repl-args '("-i" "--simple-prompt" "--no-color-info"))
@@ -87,21 +87,7 @@
               ("TAB" . 'copilot-accept-completion)
               ("C-TAB" . 'copilot-accept-completion-by-word)
               ("C-<tab>" . 'copilot-accept-completion-by-word)))
-;; To enable jsonian to work with flycheck
-(after! (jsonian flycheck) (jsonian-enable-flycheck))
 ;; To diasable so-long mode overrides
-(after! (jsonian so-long) (jsonian-no-so-long-mode))
-
-(map! :after jsonian
-      :map jsonian-mode-map
-      :leader
-      (:prefix-map ("j" . "json")
-        (:desc "find path" "j" #'jsonian-find)
-        (:desc "edit value" "e" #'jsonian-edit-string)))
-;; (map! :leader
-;;       (:prefix-map ("d" . "applications")
-;;        (:prefix ("j" . "journal")
-;;         :desc "New journal entry" "j" #'jsonian-find)))
 (after! js2-mode
   (set-company-backend! 'js2-mode 'company-tide 'company-yasnippet))
 (after! sh-script
@@ -110,10 +96,3 @@
 (after! cc-mode
   (set-company-backend! 'c-mode
     '(:separate company-irony-c-headers company-irony)))
-(after! mu4e
-  (setq sendmail-program (executable-find "msmtp")
-	send-mail-function #'smtpmail-send-it
-	message-sendmail-f-is-evil t
-	message-sendmail-extra-arguments '("--read-envelope-from")
-	message-send-mail-function #'message-send-mail-with-sendmail))
-(setq +mu4e-backend 'offlineimap)
